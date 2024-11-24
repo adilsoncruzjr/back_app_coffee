@@ -31,9 +31,9 @@ class Order extends Model
 
     // Relacionamento: Uma ordem pertence a um usuário
     public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+{
+    return $this->belongsTo(User::class, 'id_user');
+}
 
     // Relacionamento: Uma ordem pode estar vinculada a um carrinho
     public function cart()
