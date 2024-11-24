@@ -18,15 +18,14 @@ class ShoppingCart extends Model
         'final_value_car',
     ];
 
+    // Casts a coluna id_prod_q para array
+    protected $casts = [
+        'id_prod_q' => 'array', // Faz o cast para array automaticamente
+    ];
+
     // Relacionamento com a tabela users
     public function user()
     {
         return $this->belongsTo(User::class, 'id_user');
-    }
-
-    // Relacionamento com a tabela products
-    public function product()
-    {
-        return $this->belongsTo(Product::class, 'id_prod_q');
     }
 }

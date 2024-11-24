@@ -215,4 +215,24 @@ class AuthController extends Controller
         }
     }
 
+    public function syncOrdersForAllUsers()
+{
+    // Obter todos os usuários
+    $users = User::all();
+
+    foreach ($users as $user) {
+        // Obter as ordens do usuário
+        $orders = $user->orders()->pluck('id')->toArray();
+
+        // Atualizar a coluna orders_id com a lista de IDs das ordens
+        $user->orders_id = json_encode($orders);
+        $user->save();
+    }
+
+    return response()->json([
+        'message' => 'Orders synced successfully for all users.'
+    ], 200);
+}
+
+
 }
