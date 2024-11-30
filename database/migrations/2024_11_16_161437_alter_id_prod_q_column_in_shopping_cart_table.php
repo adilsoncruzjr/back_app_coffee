@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('shopping_cart', function (Blueprint $table) {
-            $table->json('id_prod_q')->change(); // Alterando para tipo json
+            $table->json('id_prod_q')->change(); 
         });
     }
 

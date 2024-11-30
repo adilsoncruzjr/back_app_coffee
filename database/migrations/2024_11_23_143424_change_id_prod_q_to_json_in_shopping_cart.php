@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('shopping_cart', function (Blueprint $table) {
-            $table->json('id_prod_q')->change(); // Altera o tipo para JSON
+            $table->json('id_prod_q')->change(); 
         });
     }
 
@@ -22,7 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('shopping_cart', function (Blueprint $table) {
-            $table->string('id_prod_q')->change(); // Volta para string, se necessário
+            $table->string('id_prod_q')->change();
         });
     }
 };

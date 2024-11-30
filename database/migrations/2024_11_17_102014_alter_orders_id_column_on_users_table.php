@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            // Alterando a coluna orders_id para JSON
+           
             $table->json('orders_id')->nullable()->change();
         });
     }
@@ -23,7 +23,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            // Voltando a coluna orders_id para string
+           
             $table->string('orders_id')->nullable()->change();
         });
     }

@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-         // Removendo a chave estrangeira que referencia 'id_prod_q'
+         
          Schema::table('shopping_cart', function (Blueprint $table) {
-            $table->dropForeign(['id_prod_q']); // Remove a chave estrangeira
+            $table->dropForeign(['id_prod_q']); 
         });
     }
 
@@ -22,7 +22,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        // Revertendo a remoção da chave estrangeira, caso necessário
+       
         Schema::table('shopping_cart', function (Blueprint $table) {
             $table->foreign('id_prod_q')->references('id')->on('products')->onDelete('cascade');
             //

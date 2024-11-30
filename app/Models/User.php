@@ -20,23 +20,23 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'user_id',         // ID único do usuário
-        'name',            // Nome do usuário
-        'email',           // Email do usuário
-        'password',        // Senha do usuário
-        'contact_phone',   // Telefone de contato
-        'address',         // Endereço do usuário
-        'orders_id',       // ID relacionado a pedidos
-        'id_cart',         // ID relacionado ao carrinho
-        'remember_token',  // Token para manter login persistente
-        'cpf', // CPF do usuário
+        'user_id',
+        'name',
+        'email',
+        'password',
+        'contact_phone',
+        'address',
+        'orders_id',
+        'id_cart',
+        'remember_token',
+        'cpf',
     ];
 
     protected static function booted()
     {
         static::creating(function ($user) {
             if (!$user->user_id) {
-                $user->user_id = (string) Str::uuid(); // Gerar UUID para user_id
+                $user->user_id = (string) Str::uuid();
             }
         });
     }
@@ -65,7 +65,7 @@ class User extends Authenticatable
     }
 
     public function orders()
-{
-    return $this->hasMany(Order::class, 'id_user', 'id');
-}
+    {
+        return $this->hasMany(Order::class, 'id_user', 'id');
+    }
 }

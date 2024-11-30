@@ -13,13 +13,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->id(); // Auto-increment para 'id'
-            $table->string('id_prod')->unique()->default(DB::raw('uuid()')); // 'id_prod' como UUID gerado automaticamente
-            $table->string('name_prod'); // Nome do produto
-            $table->decimal('value_prod', 8, 2); // Valor do produto (decimais)
-            $table->text('description'); // Descrição do produto
-            $table->integer('stock'); // Estoque do produto
-            $table->timestamps(); // Colunas created_at e updated_at
+            $table->id(); 
+            $table->string('id_prod')->unique()->default(DB::raw('uuid()')); 
+            $table->string('name_prod'); 
+            $table->decimal('value_prod', 8, 2);
+            $table->text('description'); 
+            $table->integer('stock'); 
+            $table->timestamps(); 
         });
     }
 

@@ -12,15 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->id(); // id auto-incrementável
-            $table->unsignedBigInteger('id_user'); // Relacionamento com o usuário
-            $table->json('id_prod'); // Lista de produtos como JSON
-            $table->decimal('final_value', 10, 2); // Valor final
-            $table->timestamp('created_at')->useCurrent(); // Data e hora de criação
-            $table->string('status'); // Status do pedido
-            $table->unsignedBigInteger('id_car'); // Relacionamento com o carrinho
-            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade'); // Relacionamento com a tabela de usuários
-            $table->foreign('id_car')->references('id')->on('shopping_cart')->onDelete('cascade'); // Relacionamento com a tabela de carrinhos
+            $table->id(); 
+            $table->unsignedBigInteger('id_user'); 
+            $table->json('id_prod'); 
+            $table->decimal('final_value', 10, 2); 
+            $table->timestamp('created_at')->useCurrent(); 
+            $table->string('status'); 
+            $table->unsignedBigInteger('id_car'); 
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade'); 
+            $table->foreign('id_car')->references('id')->on('shopping_cart')->onDelete('cascade'); 
         
         });
     }
